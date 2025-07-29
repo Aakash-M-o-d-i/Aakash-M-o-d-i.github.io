@@ -20,14 +20,6 @@ media_subpath: /images/Publisher_images/
 
 **Author:** *Aakash Modi*
 
-## 🚩 Table of Contents
-
-- [Reconnaissance & Enumeration - Task 1](#reconnaissance--enumeration---task-1)
-- [Privilege Escalation](#privilege-escalation)
-- [Conclusion](#conclusion)
-
----
-
 # 🕵️ Reconnaissance & Enumeration - Task 1
 
 ## 🔍 Nmap Scan
@@ -56,7 +48,7 @@ gobuster dir -u http://10.10.45.220/ -w /usr/share/wordlists/seclists/Discovery/
 ```bash
 nikto -h http://10.10.209.74/ -o nikto_scan.txt
 ```
-![Nikto Scan Screenshot](nikto_scan.png)
+<!-- ![Nikto Scan Screenshot](nikto_scan.png) -->
 
 ---
 
