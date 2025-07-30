@@ -19,18 +19,6 @@ media_subpath: /images/AD_Basic_Enumeration/
 
 **Author:** *Aakash Modi*
 
----
-
-## 🚩 Table of Contents
-
-- [Mapping Out the Network - Task 1](#mapping-out-the-network---task-1)
-  - [Host Discovery](#host-discovery)
-  - [Nmap Scan / Port Scanning](#nmap-scan--port-scanning)
-- [Network Enumeration With SMB - Task 2](#network-enumeration-with-smb---task-2)
-- [Domain Enumeration - Task 3](#domain-enumeration---task-3)
-- [Password Spraying - Task 4](#password-spraying---task-4)
-- [Tools Used](#tools-used)
-- [Conclusion](#conclusion)
 
 ---
 

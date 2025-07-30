@@ -17,16 +17,6 @@ media_subpath: /images/Agent_Sudo/
 
 ---
 
-## 🚩 Table of Contents
-
-1. [🕵️ Reconnaissance - Task 1](#reconnaissance--enumerate---task-1)
-2. [📂 Hash Cracking & Brute-Force - Task 2](#hash-cracking--brute-force-task---2)
-3. [🏁 Capture the User Flag - Task 3](#capture-the-user-flag-task---3)
-4. [⬆️ Privilege Escalation - Task 4](#privilege-escalation-task---4)
-5. [🎉 Happy Hacking](#happy-hacking)
-
----
-
 # 🕵️ Reconnaissance/ Enumerate  - Task 1
 
 > **Username:** `chris`  
