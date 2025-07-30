@@ -2,8 +2,8 @@
 layout: post
 title: Publisher
 date:  2025-07-29 23:00:00 +0530 
-categories: [Hacking, Tryhackme]
-tags: [hacking, tryhackme, writeup,ctf, publisher] # TAG names should always be lowercase 
+categories: [Tryhackme]
+tags: [hacking, tryhackme, writeup,ctf, publisher,sudo, apt] # TAG names should always be lowercase 
 render_with_liquid: false
 media_subpath: /images/Publisher_images/
 
