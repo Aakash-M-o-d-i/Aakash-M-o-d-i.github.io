@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Agent Sudo
+title: 'Tryhackme: Agent Sudo'
 date:  2025-06-14 23:00:00 +0530 
 categories: [Tryhackme]
 tags: [hacking, tryhackme, writeup,ctf, Agent_Sudo,sudo, apt, ssh, ftp] # TAG names should always be lowercase 
@@ -9,7 +9,7 @@ media_subpath: /images/Agent_Sudo/
 
 ---
 
-# 🕵️‍♂️ Agent Sudo - 14 June 2k25
+# Tryhackme: Agent Sudo - 14 June 2k25
 
 ![TryHackMe Logo](THM.png)
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AD Basic Enumeration
+title: 'Tryhackme: AD: Basic Enumeration'
 date:  2025-07-10 23:00:00 +0530 
 categories: [Tryhackme]
 tags: [hacking, tryhackme, namp, smbclient, ldapsearch,ftp,ssh] # TAG names should always be lowercase 
@@ -10,7 +10,7 @@ media_subpath: /images/AD_Basic_Enumeration/
 ---
 
 
-# 🕵️‍♂️ AD: Basic Enumeration | Writeup | 10 July 2025
+# Tryhackme: AD: Basic Enumeration | Writeup | 10 July 2025
 
 ![TryHackMe Logo](THM.png)
 ![Overpass_image](AD_BE.png)

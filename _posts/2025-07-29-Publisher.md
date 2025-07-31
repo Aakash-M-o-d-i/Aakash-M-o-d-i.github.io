@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Publisher
+title: 'Tryhackme: Publisher'
 date:  2025-07-29 23:00:00 +0530 
 categories: [Tryhackme]
 tags: [hacking, tryhackme, writeup,ctf, publisher,sudo, apt] # TAG names should always be lowercase 
@@ -10,7 +10,7 @@ media_subpath: /images/Publisher_images/
 ---
 
 
-# 🕵️‍♂️ Publisher | Writeup | 25 July 2025
+# Tryhackme: Publisher | Writeup | 25 July 2025
 
 ![TryHackMe Logo](THM.png)
 
