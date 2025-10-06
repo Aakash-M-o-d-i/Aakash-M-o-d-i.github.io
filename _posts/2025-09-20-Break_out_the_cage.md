@@ -6,7 +6,7 @@ categories: [TryHackMe]
 tags: [tryhackme, walkthrough, web-enumeration, privilege-escalation, suid, hash-cracking, post-exploitation, pentesting]
 render_with_liquid: false
 media_subpath: /images/Break_out_the_cage/
-description: "Compact walkthrough of Break out the cage — enumeration, SQL injection, shelling, local enumeration, and SUID binary exploitation."
+description: "Walkthrough of Break out the cage: web and service enumeration (HTTP, FTP), content discovery and decoding, gaining initial access via a writable cron‑read file, local enumeration and shell stabilization, and privilege escalation via a misused SUID/Polkit helper."
 ---
 
 # TryHackMe: Break out the cage — Writeup | 20 September 2025
@@ -17,18 +17,20 @@ description: "Compact walkthrough of Break out the cage — enumeration, SQL inj
 </div>
 
 **Author:** Aakash Modi
+
 ---
 
 ## Overview
-A compact, hands‑on room focused on web‑facing attack paths and local escalation. The exercise guides you through surface enumeration (HTTP, directories, and services), discovering and exploiting an SQL injection to gain initial access, performing targeted local enumeration to find weak points, and abusing a SUID helper to escalate to root. 
+A compact, hands‑on room that teaches web‑facing attack paths and local escalation. You perform surface enumeration (HTTP, directories, FTP), recover credentials and decoded content, gain initial access by planting a payload in a writable artifact consumed by a scheduled task, stabilize an interactive shell, and escalate to root via a misused SUID/Polkit helper.
 
 Skills practiced:
-- Web enumeration and content discovery
-- Basic SQL injection exploitation and credential recovery
-- Post‑exploitation: shell stabilization and local discovery
-- Privilege escalation using misconfigured SUID binaries
+- Web enumeration and content discovery (nmap, gobuster, HTTP/FTP)
+- Decoding and credential recovery (Base64, Vigenère, etc.)
+- Initial access via writable file exploitation and reverse shells
+- Post‑exploitation: shell stabilization and targeted local enumeration
+- Privilege escalation using misconfigured SUID/Polkit helpers
 
-Estimated difficulty: Beginner to Intermediate. Perform all activities only in authorized labs and learning environments; do not attempt against systems you do not own or have explicit permission to test.
+Estimated difficulty: Beginner → Intermediate. Perform all actions only in authorized labs and environments.
 
 ---
 
@@ -38,9 +40,8 @@ Estimated difficulty: Beginner to Intermediate. Perform all activities only in a
 
   - username: `weston`
 
-- Images referenced in this writeup:
-  - `website_view.png`
-  - `username.png`
+![Website View](website_view.png)
+![Username](username.png)
 
 ---
 
@@ -70,7 +71,11 @@ Anonymous FTP was permitted. Example credentials used:
 - username: `anonymous`
 - password: `anonymous`
 
-From the FTP server we downloaded `dad_tasks`. (See `ftp_login.png`, `get_file.png`, `tasks_file.png`.)
+From the FTP server we downloaded `dad_tasks`. 
+
+![FTP Login](ftp_login.png)
+![Get File](get_file.png)
+![Tasks File](tasks_file.png)
 
 ---
 
@@ -95,12 +100,15 @@ Interesting directories found:
 
 ## Vigenère / encoded data
 
-A base64 string discovered in the lab contained a Vigenère-encrypted message. Using CyberChef and a Vigenère solver we recovered credentials:
+A Base64 string recovered from the lab decoded to a Vigenère‑encrypted message. I decoded the Base64 (e.g., with CyberChef) and solved the Vigenère cipher using the Guballa Vigenère Solver open it in a new tab: <a href="https://www.guballa.de/vigenere-solver" target="_blank" rel="noopener noreferrer">Guballa Vigenère Solver</a>.
 
+Credentials recovered:
 - username: `weston`
 - password: `Mydadisghostrideraintthatcoolnocausehesonfirejokes`
 
-(See `hash_creak.png`, `hash_to_plain_text.png`, `password.png`.)
+![Hash Creak](hash_creak.png)
+![Hash to Plain Text](hash_to_plain_text.png)
+![Password](password.png)
 
 ---
 
@@ -127,7 +135,9 @@ Files of interest:
 - `/opt/.dads_scripts/spread_the_quotes.py`
 - `/opt/.dads_scripts/.files/.quotes`
 
-(See `pspy.png`, `automated_script.png`, `interesting.png`.)
+![pspy](pspy.png)
+![Automated Script](automated_script.png)
+![Interesting](interesting.png)
 
 ---
 
@@ -149,7 +159,8 @@ Inside the box, enumeration revealed `Super_Duper_Checklist` containing Task 2 t
 
 - flag (Task 2): THM{M37AL_0R_P3N_T35T1NG}
 
-(See `payload.png`, `flag_tash2.png`.)
+![Payload](payload.png)
+![Flag Task 2](flag_tash2.png)
 
 ---
 
@@ -167,7 +178,11 @@ Root flag was in `email_backup/email_2`:
 
 - root flag: THM{8R1NG_D0WN_7H3_C493_L0N9_L1V3_M3}
 
-(See `pwnkit.png`, `python_server.png`, `download_pwnkit.png`, `root_access.png`, `root_flag.png`.)
+![PwnKit](pwnkit.png)
+![Python Server](python_server.png)
+![Download PwnKit](download_pwnkit.png)
+![Root Access](root_access.png)
+![Root Flag](root_flag.png)
 
 ---
 
