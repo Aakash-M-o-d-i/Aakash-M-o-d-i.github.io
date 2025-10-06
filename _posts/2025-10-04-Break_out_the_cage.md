@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TryHackMe: Break out the cage"
-date: 2025-09-20 23:00:00 +0530
+date: 2025-10-04 23:00:00 +0530
 categories: [TryHackMe]
 tags: [tryhackme, walkthrough, web-enumeration, privilege-escalation, suid, hash-cracking, post-exploitation, pentesting]
 render_with_liquid: false
@@ -9,7 +9,7 @@ media_subpath: /images/Break_out_the_cage/
 description: "Walkthrough of Break out the cage: web and service enumeration (HTTP, FTP), content discovery and decoding, gaining initial access via a writable cron‑read file, local enumeration and shell stabilization, and privilege escalation via a misused SUID/Polkit helper."
 ---
 
-# TryHackMe: Break out the cage — Writeup | 20 September 2025
+# TryHackMe: Break out the cage — Writeup | 04 October 2025
 
 <div align="center">
   <img src="THM.png" alt="TryHackMe Logo" width="800"/>
