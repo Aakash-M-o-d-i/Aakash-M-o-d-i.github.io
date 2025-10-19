@@ -12,7 +12,7 @@ description: "A compact walkthrough of The Cod Caper — enumeration, SQL inject
 # TryHackMe: The Cod Caper — Writeup | 20 September 2025
 
 <div align="center">
-  <img src="THM.png" alt="TryHackMe Logo" width="800"/>
+  <img src="THM.png" alt="TryHackMe Logo" width="801"/>
   <img src="The_Cod_Caper.png" alt="Room Banner" width="500"/>
 </div>
 
