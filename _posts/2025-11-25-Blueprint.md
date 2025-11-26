@@ -222,7 +222,7 @@ For extracting the NTLM hash, we can use the following mimikatz command:
 lsa_dump_sam
 ```
 <div align="center">
-    <img src="ntml_hash.png" alt="NTML Hash" width="800"/>
+    <img src="ntlm_hash.png" alt="NTML Hash" width="800"/>
 </div>
 
 after getting the NTML hash, we can use hashes.com to crack it and get the plaintext password.
