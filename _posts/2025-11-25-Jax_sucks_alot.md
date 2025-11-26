@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TryHackMe: Jax sucks alot............."
-date: 2025-11-26 23:00:00 +0530
+date: 2025-11-25 23:00:00 +0530
 categories: [TryHackMe]
 tags: [tryhackme, jason, walkthrough, ctf, nodejs, deserialization, rce, privilege-escalation, enumeration, reverse-shell, nmap, burpsuite, linux, pentesting, hacking]
 render_with_liquid: false
@@ -9,7 +9,7 @@ media_subpath: /images/Jax/
 description: "A quick walkthrough of TryHackMe's 'Jason' room, covering basic enumeration and exploitation steps."
 ---
 
-# TryHackMe: Jax sucks alot CTF — Writeup | 26 November 2025
+# TryHackMe: Jax sucks alot CTF — Writeup | 25 November 2025
 
 <div align="center">
     <img src="THM.png" alt="TryHackMe Logo" width="900"/>
