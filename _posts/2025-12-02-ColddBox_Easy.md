@@ -7,6 +7,7 @@ tags: [tryhackme, ColddBox, ctf, walkthrough, linux, privilege-escalation, web-e
 render_with_liquid: false
 media_subpath: /images/Colddbox/
 description: "An easy WordPress-based box where you exploit a vulnerable site to gain access and escalate privileges to root."
+
 ---
 
 # TryHackMe: ColddBox: Easy CTF — Writeup | 02 December 2025
