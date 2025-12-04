@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TryHackMe: ColddBox: Easy"
+title: "TryHackMe: ColddBox Easy"
 date: 2025-12-02 23:00:00 +0530
 categories: [TryHackMe]
 tags: [tryhackme, ColddBox, ctf, walkthrough, linux, privilege-escalation, web-enumeration, ssh, hacking, writeup]
