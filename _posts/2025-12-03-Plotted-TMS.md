@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TryHackMe: Plotted-TMS"
-date: 2025-12-04 23:00:00 +0530
+date: 2025-12-03 23:00:00 +0530
 categories: [TryHackMe]
 tags: [tryhackme, Plotted-TMS, ctf, walkthrough, linux, privilege-escalation, web-enumeration, ssh, hacking, writeup]
 render_with_liquid: false
@@ -10,7 +10,7 @@ description: "An easy Linux box where you exploit SQL injection for access and l
 
 ---
 
-# TryHackMe: Plotted-TMS CTF — Writeup | 02 December 2025
+# TryHackMe: Plotted-TMS CTF — Writeup | 03 December 2025
 
 <div align="center">
     <img src="THM.png" alt="TryHackMe Logo" width="900"/>
