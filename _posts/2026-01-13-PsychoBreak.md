@@ -114,7 +114,8 @@ ffuf -u http://<TARGET_IP>/SafeHaven/FUZZ -w /usr/share/wordlists/dirbuster/dire
 ```
 
 <div align="center">
-    <img src="ffuf.png" alt="FFUF Scan" width="800"/>
+<!-- all clear  -->
+    <img src="ffuf.png" alt="FFUF Scan" width="800"/> 
 </div>
 
 ---
