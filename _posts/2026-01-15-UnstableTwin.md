@@ -14,7 +14,7 @@ description: "A Services based room, extracting information from HTTP Services a
 
 <div align="center">
     <img src="THM.png" alt="TryHackMe Logo" width="900"/>
-    <img src="UnstableTwin.png" alt="Room Banner" width="300" style="border-radius: 50%;"/>
+    <img src="UnstableTwin.png" alt="Room Banner" width="300"/>
 </div>
 
 ---
